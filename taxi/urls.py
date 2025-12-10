@@ -8,11 +8,15 @@ from .views import (index,
 
 urlpatterns = [
     path("", index, name="index"),
-    path("manufacturers/", ManufacturerListView.as_view(), name="manufacturer-list"),
-    path("cars/", CarListView.as_view(), name="cars-list"),
-    path("drivers/", DriverListView.as_view(), name="drivers-list"),
+    path("manufacturers/",
+         ManufacturerListView.as_view(),
+         name="manufacturer-list"),
+    path("cars/", CarListView.as_view(), name="car-list"),
+    path("drivers/", DriverListView.as_view(), name="driver-list"),
     path("cars/<int:pk>/", CarsDetailView.as_view(), name="car-detail"),
-    path("drivers/<int:pk>/", DriverDetailView.as_view(), name="driver-detail")
+    path("drivers/<int:pk>/",
+         DriverDetailView.as_view(),
+         name="driver-detail")
 ]
 
 app_name = "taxi"
